@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
 import configureStore from '../store/store';
 import { Route, Router, Switch } from 'react-router-dom';
-import RegisterPage from '../pages/RegisterPage';
+import RegisterCreate from '../pages/RegisterCreate';
 import LoginPage from '../pages/LoginPage';
 import ArticleList from '../components/articles/ArticleList';
 import ArticleCreate from '../components/articles/ArticleCreate';
@@ -23,7 +23,7 @@ const App = (props) => (
     <Router history={history}>
       
       <Switch>
-        <Route path="/sign_up" component={RegisterPage} />
+        <Route path="/sign_up" component={RegisterCreate} />
         <Route path="/signIn" component={LoginPage} />
 
         <Route exact path ="/" component ={ArticleList} />

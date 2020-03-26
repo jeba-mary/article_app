@@ -26,14 +26,15 @@ class RegisterPage extends React.Component {
     );
   }
 
+  
   onSubmit = (formValues) => {
-    this.props.signUp(formValues);
+    this.props.onSubmit(formValues);
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.onSubmit}>
+        <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
         <Field
           name="email"
           component={this.renderInput}
@@ -62,6 +63,5 @@ class RegisterPage extends React.Component {
 
 
 export default reduxForm({
-  signUp,
   form: 'RegisterPage',
 })(RegisterPage);
